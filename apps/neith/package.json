@@ -1,18 +1,25 @@
 {
-  "name": "@efnf/neith",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "dependencies": {
-    "@efnf/protos": "workspace:*",
-    "webdriverio": "^8.35.1"
-  },
-  "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
-  }
+	"name": "@efnf/neith",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node dist/index.js",
+		"dev": "tsup --watch --onSuccess \"node dist/index.js\" --cjsInterop",
+		"build": "tsup",
+		"clean": "rm -rf dist",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@efnf/protos": "workspace:*",
+		"@grpc/grpc-js": "^1.10.3",
+		"@grpc/proto-loader": "^0.7.10",
+		"express": "^4.19.2",
+		"webdriverio": "^8.35.1"
+	},
+	"devDependencies": {
+		"@repo/typescript-config": "workspace:*",
+		"@types/express": "^4.17.21",
+		"tsup": "^8.0.2",
+		"typescript": "^5.3.3"
+	}
 }

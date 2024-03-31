@@ -1,11 +1,23 @@
 {
-  "name": "@efnf/protos",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  }
+	"name": "@efnf/protos",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {},
+	"devDependencies": {
+		"google-protobuf": "^3.21.2",
+		"protoc-gen-ts": "^0.8.7",
+		"tsup": "^8.0.2",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"@bufbuild/buf": "^1.30.0",
+		"@bufbuild/protobuf": "^1.8.0",
+		"@bufbuild/protoc-gen-es": "^1.8.0",
+		"@grpc/grpc-js": "^1.10.3",
+		"protobufjs": "^7.2.6"
+	},
+	"exports": {
+		".": "./common/index.ts",
+		"./seller_amp": "./common/seller_amp.ts"
+	}
 }

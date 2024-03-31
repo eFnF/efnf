@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package seller_amp;
+
+service SellerAmp {
+  rpc GetFbaData(FbaRequest) returns (SellerAmpResponse) {}
+  rpc GetFbmData(FbmRequest) returns (SellerAmpResponse) {}
+}
+
+message FbaRequest {
+  string asin = 1;
+  double cost = 2;
+}
+
+message FbmRequest {
+  string asin = 1;
+  double cost = 2;
+  double fbmCost = 3;
+}
+
+message SellerAmpResponse {
+  repeated string alerts = 1;
+  string bsr = 2;
+  string predictedSales = 3;
+  double cost = 4;
+  double salePrice = 5;
+  double profit = 6;
+  string roi = 7;
+  string profitMargin = 8;
+  double breakeven = 9;
+  string offersCount = 10;
+  string variationsCount = 11;
+  string imgsrc = 12;
+  string title = 13;
+}
